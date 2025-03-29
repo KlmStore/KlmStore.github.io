@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KlmPlay</title>
+    <style>
+        :root {
+            --bg-color: white;
+            --text-color: black;
+            --button-bg: #4CAF50;
+            --button-hover: #45a049;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--button-bg);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .download-button:hover {
+            background-color: var(--button-hover);
+        }
+        
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+        
+        .theme-switcher {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            cursor: pointer;
+        }
+        
+        .dark-theme {
+            --bg-color: black;
+            --text-color: white;
+            --button-bg: #008000;
+            --button-hover: #006400;
+        }
+    </style>
+</head>
+<body>
+    <h1>KlmPlay</h1>
+
+    <!-- Блоки приложений -->
+    <div>
+        <h2>CX проводник</h2>
+        <img src="cx.png" alt="Иконка приложения 1" class="app-icon">
+        <p>Нажмите на кнопку, чтобы скачать CX проводник.</p>
+        <a href="https://fs361.tbx.su/files10/2060543_6cd85f/com.cxinventor.file.explorer-241.apk" class="download-button" target="_blank">Скачать</a>
+    </div>
+    
+    <div>
+        <h2>SHAREit</h2>
+        <img src="si.png" alt="Иконка приложения 2" class="app-icon">
+        <p>Нажмите на кнопку, чтобы скачать SHAREit.</p>
+        <a href="https://fs319.tbx.su/files10/2065486_0c4c63/com.lenovo.anyshare.gps-4062558.apk" class="download-button" target="_blank">Скачать</a>
+    </div>
+    
+    <div>
+        <h2>SoundCloud</h2>
+        <img src="sc.png" alt="Иконка приложения 3" class="app-icon">
+        <p>Нажмите на кнопку, чтобы скачать SoundCloud.</p>
+        <a href="https://fs139.tbx.su/files10/1980035_c2686b/soundcloud_2024.06.25-release.apk" class="download-button" target="_blank">Скачать</a>
+    </div>
+    
+    <!-- Кнопка переключения тем -->
+    <button id="theme-switcher" class="theme-switcher">
+        <img src="sun-icon.svg" alt="Светлая тема" id="light-theme-icon" style="display: block;">
+        <img src="moon-icon.svg" alt="Темная тема" id="dark-theme-icon" style="display: none;">
+    </button>
+
+<script>
+    // Функция для переключения тем
+    document.getElementById('theme-switcher').addEventListener('click', function() {
+        if (document.body.classList.contains('dark-theme')) {
+            document.body.classList.remove('dark-theme');
+            document.getElementById('light-theme-icon').style.display = 'block';
+            document.getElementById('dark-theme-icon').style.display = 'none';
+        } else {
+            document.body.classList.add('dark-theme');
+            document.getElementById('light-theme-icon').style.display = 'none';
+            document.getElementById('dark-theme-icon').style.display = 'block';
+        }
+    });
+</script>
+</body>
+</html>
